@@ -17,6 +17,10 @@
 - Masukan: event pesanan 90 hari dari pipeline.
 - Keluaran: angka per rute + interval keyakinan.
 
+## Kartu model
+
+- `rekomendasi-vendor`: [MODEL_CARD.md](rekomendasi-vendor/MODEL_CARD.md) (stub, baseline manual).
+
 ## Aturan berkas
 
 - Bobot model TIDAK di-commit bila > 10 MB — simpan di object storage, catat URL + checksum di sini.
