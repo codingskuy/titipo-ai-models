@@ -1,0 +1,8 @@
+{
+  "id_rumah_tangga": "RT-001",
+  "id_area": "AREA-SAMAR-01",
+  "kandidat": [
+    { "id": "V-SAMAR-01", "jarak_km": 0.4, "rating": 4.6, "sisa_kuota": 12, "prioritas": true, "riwayat_30h": 5 },
+    { "id": "V-SAMAR-02", "jarak_km": 1.1, "rating": 4.2, "sisa_kuota": 3, "prioritas": false, "riwayat_30h": 0 }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "titipo-ai-models/permintaan-skor/v1",
+  "title": "PermintaanSkorVendor (ASUMSI, belum disetujui TownHall)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id_rumah_tangga", "id_area", "kandidat"],
+  "properties": {
+    "id_rumah_tangga": { "type": "string", "pattern": "^RT-[A-Za-z0-9-]+$", "description": "ID samaran, bukan nama/alamat." },
+    "id_area": { "type": "string", "minLength": 1 },
+    "kandidat": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 50,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "jarak_km", "rating", "sisa_kuota", "prioritas", "riwayat_30h"],
+        "properties": {
+          "id": { "type": "string" },
+          "jarak_km": { "type": "number", "minimum": 0 },
+          "rating": { "type": "number", "minimum": 0, "maximum": 5 },
+          "sisa_kuota": { "type": "integer", "minimum": 0 },
+          "prioritas": { "type": "boolean" },
+          "riwayat_30h": { "type": "integer", "minimum": 0, "description": "Jumlah pesanan rumah tangga ke vendor ini dalam 30 hari." }
+        }
+      }
+    }
+  }
+}

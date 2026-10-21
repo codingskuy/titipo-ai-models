@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "titipo-ai-models/respons-skor/v1",
+  "title": "ResponsSkorVendor (ASUMSI, belum disetujui TownHall)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["versi_model", "sumber", "hasil"],
+  "properties": {
+    "versi_model": { "type": "string", "pattern": "^titipo-[a-z-]+-v\\d{8}$" },
+    "sumber": { "enum": ["model", "aturan_manual"], "description": "aturan_manual = jatuhan ke jarak+riwayat (STUB_UNTIL atau galat model)." },
+    "hasil": {
+      "type": "array",
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "peringkat", "skor", "alasan"],
+        "properties": {
+          "id": { "type": "string" },
+          "peringkat": { "type": "integer", "minimum": 1, "maximum": 5 },
+          "skor": { "type": "number", "minimum": 0, "maximum": 1 },
+          "alasan": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 3,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["kode", "teks"],
+              "properties": {
+                "kode": { "enum": ["JARAK_DEKAT", "SERING_DIPESAN", "RATING_TINGGI", "KUOTA_TERSEDIA", "VENDOR_PRIORITAS"] },
+                "teks": { "type": "string", "maxLength": 80 }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "versi_model": "titipo-rekomendasi-vendor-v20261101",
+  "sumber": "model",
+  "hasil": [
+    {
+      "id": "V-SAMAR-01", "peringkat": 1, "skor": 0.87,
+      "alasan": [
+        { "kode": "JARAK_DEKAT", "teks": "Paling dekat dari rumah Anda" },
+        { "kode": "SERING_DIPESAN", "teks": "Sering Anda pesan bulan ini" }
+      ]
+    },
+    {
+      "id": "V-SAMAR-02", "peringkat": 2, "skor": 0.41,
+      "alasan": [{ "kode": "RATING_TINGGI", "teks": "Rating baik" }]
+    }
+  ]
+}
